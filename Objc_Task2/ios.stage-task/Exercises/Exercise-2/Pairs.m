@@ -6,9 +6,10 @@
     NSInteger pairsCounter = 0;
     
     for (int i = 0; i < array.count; ++i) {
-        NSNumber *sum = [[NSNumber alloc] initWithInt:([array[i] intValue] + [number intValue])];
-        if ([array containsObject:sum]) {
-            pairsCounter++;
+        for (int j = 0; j < array.count; ++j) {
+            if ([array[j] intValue] - [array[i] intValue] == [number intValue]) {
+                pairsCounter++;
+            }
         }
     }
     
