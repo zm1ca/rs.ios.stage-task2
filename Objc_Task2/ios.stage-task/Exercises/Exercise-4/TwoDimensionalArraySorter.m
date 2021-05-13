@@ -32,7 +32,8 @@
         return [stringsArray sortedArrayUsingSelector:@selector(compare:)];
     }
     
-    return @[[numbersArray sortedArrayUsingSelector:@selector(compare:)], [stringsArray sortedArrayUsingSelector:@selector(compare:)]];
+    NSSortDescriptor* sortDescriptor = [NSSortDescriptor sortDescriptorWithKey:nil ascending:NO selector:@selector(localizedCompare:)];
+    return @[[numbersArray sortedArrayUsingSelector:@selector(compare:)], [stringsArray sortedArrayUsingDescriptors:@[sortDescriptor]]];
 }
 
 @end
