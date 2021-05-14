@@ -6,8 +6,8 @@
     NSInteger pairsCounter = 0;
     
     for (int i = 0; i < array.count; ++i) {
-        for (int j = 0; j < array.count; ++j) {
-            if ([array[j] intValue] - [array[i] intValue] == [number intValue]) {
+        for (int j = i + 1; j < array.count; ++j) {
+            if (ABS([array[i] intValue] - [array[j] intValue]) == [number intValue]) {
                 pairsCounter++;
             }
         }
